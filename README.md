@@ -5,6 +5,12 @@ Spotify web Api for iOS, include authentication services and all of the WebServi
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 See deployment for notes on how to deploy the project on a live system.
 
+## Requirements
+
+- iOS 11.0+
+- xCode 11+
+- Swift 5
+
 ## Installing
 
 ### CocoaPods

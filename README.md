@@ -8,7 +8,7 @@ See deployment for notes on how to deploy the project on a live system.
 ## Requirements
 
 - iOS 11.0+
-- xCode 11+
+- xCode 9+
 - Swift 5
 
 ## Installing

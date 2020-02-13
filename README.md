@@ -29,6 +29,25 @@ This will download any library dependencies you do not already have in your proj
 
 ## Usage
 
+#### Edit your info.plist
+
+Add (or edit) these following lines of your Info.plist file
+```xml
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleURLName</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>{YOUR REDIRECT URI PREFIX}</string>
+    </array>
+  </dict>
+</array>
+```
+
+Replace the redirect uri prefix with your own
+
 #### Authorization Process
 
 Import the library

@@ -154,6 +154,7 @@ SpotifyAPI.v1.userProfile.getCurrentUserProfile { (userProfile, error) in
 ```
 
 ### In the next releases
+- #### Sample app (:star: SOON :star:)
 - Search for Item API
 - Remove from Playlists API
 - Premium's account API

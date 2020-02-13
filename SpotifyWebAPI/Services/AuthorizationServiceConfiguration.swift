@@ -8,13 +8,13 @@
 
 import Foundation
 
-public class AuthorizationServiceConfiguration: Codable {
+public class AuthorizationServiceConfiguration {
     public let clientId: String
     public let clientSecret: String
     public let redirectUri: String
-    public let scopes: [String]
+    public let scopes: [Scopes]
     
-    public init(clientId: String, clientSecret: String, redirectUri: String, scopes: [String]) {
+    public init(clientId: String, clientSecret: String, redirectUri: String, scopes: [Scopes]) {
         self.clientId = clientId
         self.clientSecret = clientSecret
         self.redirectUri = redirectUri
@@ -22,6 +22,6 @@ public class AuthorizationServiceConfiguration: Codable {
     }
 
     public var encodedScopes: String {
-      return scopes.joined(separator: "%20")
+        return scopes.map { $0.rawValue }.joined(separator: "%20")
     }
 }

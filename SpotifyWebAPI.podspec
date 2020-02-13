@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SpotifyWebAPI"
-  spec.version      = "1.5.1"
+  spec.version      = "1.5.2"
   spec.summary      = "Spotify web Api for iOS"
 
   # This description is used to generate tags and improve search results.

@@ -11,6 +11,27 @@ import SafariServices
 //import AuthenticationServices
 import Alamofire
 
+public enum Scopes : String{
+    case app_remote_control = "app-remote-control"
+    case streaming = "streaming"
+    case ugc_image_upload = "ugc-image-upload"
+    case user_read_private = "user-read-private"
+    case user_read_email = "user-read-email"
+    case playlist_read_private = "playlist-read-private"
+    case user_library_read = "user-library-read"
+    case user_library_modify = "user-library-modify"
+    case user_top_read = "user-top-read"
+    case playlist_read_collaborative = "playlist-read-collaborative"
+    case playlist_modify_public = "playlist-modify-public"
+    case playlist_modify_private = "playlist-modify-private"
+    case user_follow_read = "user-follow-read"
+    case user_follow_modify = "user-follow-modify"
+    case user_read_playback_state = "user-read-playback-state"
+    case user_read_currently_playing = "user-read-currently-playing"
+    case user_modify_playback_state = "user-modify-playback-state"
+    case user_read_recently_played = "user-read-recently-played"
+}
+
 public class AuthorizationServices {
     
     public var configuration: AuthorizationServiceConfiguration?

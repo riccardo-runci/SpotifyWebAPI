@@ -45,7 +45,7 @@ You must do it before the Authentication
 SpotifyAPI.v1.auth.configuration = AuthorizationServiceConfiguration(clientId: "{ YOUR CLIENT ID }", 
                                                                      clientSecret: "{ YOUR CLIENT SECRET }", 
                                                                      redirectUri: "{ YOUR REDIRECT URI }", 
-                                                                     scopes: ["playlist-read-private", "user-read-private"])
+                                                                     scopes: ["user-read-private", "user-read-email", "user-follow-read", "user-top-read", "user-library-read" ])
 ```
 
 - Client ID: The client id provided from the SpotifyDevelopers Dashboard

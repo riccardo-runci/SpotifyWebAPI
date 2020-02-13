@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SpotifyWebAPI"
-  spec.version      = "1.3"
+  spec.version      = "1.4"
   spec.summary      = "Spotify web Api for iOS"
 
   # This description is used to generate tags and improve search results.
@@ -86,9 +86,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   #  Specify the location from where the source should be retrieved.
   #  Supports git, hg, bzr, svn and HTTP.
   #
-
+  #spec.source       = { :path => '.' }
   spec.source       = { :git => "https://github.com/Rilissimo1/SpotifyWebAPI.git", :tag => "#{spec.version}" }
-  spec.platform     = :ios, "13.0"
+  spec.platform     = :ios, "11.0"
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

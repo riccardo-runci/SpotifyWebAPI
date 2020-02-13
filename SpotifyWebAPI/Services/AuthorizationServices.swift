@@ -8,7 +8,7 @@
 
 import Foundation
 import SafariServices
-import AuthenticationServices
+//import AuthenticationServices
 import Alamofire
 
 public class AuthorizationServices {
@@ -39,8 +39,8 @@ public class AuthorizationServices {
     private let TOKEN_TYPE_KEY = "TOKEN_TYPE_KEY"
     
     private let tokenUrl = "https://accounts.spotify.com/api/token"
-
-    private var webAuthSession: ASWebAuthenticationSession?
+    private var authSession: SFAuthenticationSession?
+   // private var webAuthSession: ASWebAuthenticationSession?
     
     public func getAccessToken() -> AccessToken {
         return AccessToken(accessToken: ACCESS_TOKEN, expiresIn: Int(EXPIRES_IN ?? "0"), refreshToken: REFRESH_TOKEN, tokenType: TOKEN_TYPE)
@@ -66,7 +66,7 @@ public class AuthorizationServices {
         }
     }
     
-    public func authenticate (delegate: ASWebAuthenticationPresentationContextProviding, onComplete : @escaping (_ response : AccessToken?, SpotifyError?) -> ()) {
+    public func authenticate (onComplete : @escaping (_ response : AccessToken?, SpotifyError?) -> ()) {
         
         guard let config = configuration else{
             print("NO CONFIGURATION SET")
@@ -76,12 +76,12 @@ public class AuthorizationServices {
 
         let urlString = "https://accounts.spotify.com/authorize?client_id=\(config.clientId)&response_type=code&redirect_uri=\(config.redirectUri)&scope=\(config.encodedScopes)"
 
-        let authURL = URL(string: urlString)
+        let authURL = URL(string: urlString)!
         let callbackUrlScheme = config.redirectUri
 
-        self.webAuthSession = ASWebAuthenticationSession.init(url: authURL!, callbackURLScheme: callbackUrlScheme, completionHandler: { (callBack, error) in
-
-            // handle auth response
+        //Initialize auth session
+        self.authSession = SFAuthenticationSession(url: authURL, callbackURLScheme: callbackUrlScheme, completionHandler: { (callBack, error) in
+                        // handle auth response
             guard error == nil, let successURL = callBack else {
                 print(error?.localizedDescription ?? "")
                 onComplete(nil, SpotifyError(error: Error(status: 0, message: error?.localizedDescription ?? "Internal Error")))
@@ -96,10 +96,31 @@ public class AuthorizationServices {
             else{
                 onComplete(nil, SpotifyError(error: Error(status: 0, message: "No OAuth Token")))
             }
-
         })
-        self.webAuthSession?.presentationContextProvider = delegate
-        self.webAuthSession?.start()
+
+        self.authSession?.start()
+        
+//        self.webAuthSession = ASWebAuthenticationSession.init(url: authURL!, callbackURLScheme: callbackUrlScheme, completionHandler: { (callBack, error) in
+//
+//            // handle auth response
+//            guard error == nil, let successURL = callBack else {
+//                print(error?.localizedDescription ?? "")
+//                onComplete(nil, SpotifyError(error: Error(status: 0, message: error?.localizedDescription ?? "Internal Error")))
+//                return
+//            }
+//
+//            let oauthToken = NSURLComponents(string: (successURL.absoluteString))?.queryItems?.filter({$0.name == "code"}).first
+//
+//            if let code = oauthToken?.value{
+//                self.requestToken(code: code, onComplete: onComplete)
+//            }
+//            else{
+//                onComplete(nil, SpotifyError(error: Error(status: 0, message: "No OAuth Token")))
+//            }
+//
+//        })
+//        self.webAuthSession?.presentationContextProvider = delegate
+//        self.webAuthSession?.start()
     }
     
     public func requestToken (code: String, onComplete : @escaping (_ response : AccessToken?, SpotifyError?) -> ()) {

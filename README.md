@@ -9,6 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 - iOS 11.0+
 - xCode 9+
 - Swift 5
+- App successfully set from the Spotify Developers dashboard
 
 ## Installing
 

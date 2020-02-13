@@ -53,7 +53,6 @@ SpotifyAPI.v1.auth.authenticate() { (newToken, errorResponse) in
 
     if let error = errorResponse{
         //Something gone wrong
-        print(error)
         return
     }
 
@@ -61,13 +60,96 @@ SpotifyAPI.v1.auth.authenticate() { (newToken, errorResponse) in
         //invalid access token
         return
     }
-    print(accessToken)
+    //Authentication success
 
 }
 ```
 
+The Spotify's access token expire in 3600 seconds (generally), you can check if the session is still valid via API
+
+- true: if the Session is expired (OR the user has not yet authenticated)
+- false: the Session is still valid
+
+```swift
+SpotifyAPI.v1.auth.checkIfSessionIsExpired { (expired) in
+    if(expired){
+        // the session is expired
+    }
+    else{
+        // the session is still valid, you can call any API
+    }
+}
+```
+
+if the session is not valid because the access token is expired you can refresh the access token via API
 
 
-### In the next update
+```swift
+SpotifyAPI.v1.auth.refreshToken { (newAccessToken, errorResponse) in
+    if let accessToken = newAccessToken{
+        // refresh token success, you can call any API
+    }
+    else{
+        // refresh token failed
+        // user must authenticate again
+    }
+}
+```
+
+so you can easly manage the session refresh process in a few lines
+
+
+```swift
+SpotifyAPI.v1.auth.checkIfSessionIsExpired { (expired) in
+    if(expired){
+        SpotifyAPI.v1.auth.refreshToken { (newAccessToken, errorResponse) in
+            if let accessToken = newAccessToken{
+                // refresh token success, you can call any API
+            }
+            else{
+                // refresh token failed
+                // user must authenticate again
+            }
+        }
+    }
+    else{
+        // the session is still valid, you can call any API
+    }
+}
+```
+
+#### Notes:
+
+If you need to clear the authentication (like if you need to request some new scopes or start new authentication process)
+you can clear the cookies with
+
+```swift
+SpotifyAPI.v1.auth.clearCookies()
+```
+
+#### Common API Calls
+
+After you have completed the authorization process you can now start to interact with the SpotifyAPI
+
+Example: Get User Profile
+```swift
+SpotifyAPI.v1.userProfile.getCurrentUserProfile { (userProfile, error) in
+    if let responseError = error {
+        //Something gone wrong
+    }
+
+    if let user = userProfile{
+        // Success
+    }
+    else{
+        //Something gone wrong
+    }
+}
+```
+
+### In the next releases
 - Search for Item API
 - Remove from Playlists API
+- Premium's account API
+
+### :warning: This Framework is still in development, some bugs may occur during use

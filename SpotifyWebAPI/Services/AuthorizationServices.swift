@@ -83,7 +83,7 @@ public class AuthorizationServices {
 
             // handle auth response
             guard error == nil, let successURL = callBack else {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "")
                 onComplete(nil, SpotifyError(error: Error(status: 0, message: error?.localizedDescription ?? "Internal Error")))
                 return
             }

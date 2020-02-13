@@ -51,6 +51,10 @@ public class AuthorizationServices {
     }
 
     public func checkIfSessionIsExpired(onComplete : @escaping (_ expired : Bool) -> ()){
+        if(ACCESS_TOKEN == nil || ACCESS_TOKEN == ""){
+            onComplete(true)
+            return
+        }
         SpotifyAPI.v1.userProfile.getCurrentUserProfile { (result, error) in
             guard let err = error?.error else{
                 onComplete(false)
@@ -99,28 +103,6 @@ public class AuthorizationServices {
         })
 
         self.authSession?.start()
-        
-//        self.webAuthSession = ASWebAuthenticationSession.init(url: authURL!, callbackURLScheme: callbackUrlScheme, completionHandler: { (callBack, error) in
-//
-//            // handle auth response
-//            guard error == nil, let successURL = callBack else {
-//                print(error?.localizedDescription ?? "")
-//                onComplete(nil, SpotifyError(error: Error(status: 0, message: error?.localizedDescription ?? "Internal Error")))
-//                return
-//            }
-//
-//            let oauthToken = NSURLComponents(string: (successURL.absoluteString))?.queryItems?.filter({$0.name == "code"}).first
-//
-//            if let code = oauthToken?.value{
-//                self.requestToken(code: code, onComplete: onComplete)
-//            }
-//            else{
-//                onComplete(nil, SpotifyError(error: Error(status: 0, message: "No OAuth Token")))
-//            }
-//
-//        })
-//        self.webAuthSession?.presentationContextProvider = delegate
-//        self.webAuthSession?.start()
     }
     
     public func requestToken (code: String, onComplete : @escaping (_ response : AccessToken?, SpotifyError?) -> ()) {
@@ -168,13 +150,17 @@ public class AuthorizationServices {
         }
     }
     
-    public func refreshToken (completion: @escaping (Error?) -> Void, onComplete : @escaping (_ response : AccessToken?, SpotifyError?) -> ()) {
+    public func refreshToken (onComplete : @escaping (_ response : AccessToken?, SpotifyError?) -> ()) {
         guard let config = configuration else{
             print("NO CONFIGURATION SET")
             onComplete(nil, nil)
             return
         }
-    
+        
+        if(REFRESH_TOKEN == nil || REFRESH_TOKEN == ""){
+            onComplete(nil, SpotifyError(error: Error(status: 0, message: "Invalid refresh token, you must authenticate first. Try authenticate()")))
+            return
+        }
 
         let parameters: Parameters = [
             "grant_type": "refresh_token",

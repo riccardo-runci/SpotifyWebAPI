@@ -12,7 +12,7 @@ See deployment for notes on how to deploy the project on a live system.
 To integrate SpotifyWebAPI into your xCode project using CocoaPods, specify it in your ``` Podfile``` :
 
 ``` 
-pod 'SpotifyWebAPI', :git => 'https://github.com/Rilissimo1/SpotifyWebAPI', :tag => '1.4' 
+pod 'SpotifyWebAPI', :git => 'https://github.com/Rilissimo1/SpotifyWebAPI' 
 ```
 
 Then, run the following command:

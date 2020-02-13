@@ -1,9 +1,8 @@
 # SpotifyWebAPI
-Spotify web Api for iOS, include authentication services and all of the WebServices available from Spotify
+Spotify web Api for iOS, include authentication services and the WebServices available from Spotify
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
-See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development or testing purposes.
 
 ## Requirements
 

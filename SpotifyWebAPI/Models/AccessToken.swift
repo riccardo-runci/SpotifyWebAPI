@@ -8,10 +8,10 @@
 
 // MARK: - AccessToken
 public struct AccessToken: Codable {
-    var accessToken: String?
-    var expiresIn: Int?
-    var refreshToken: String?
-    var tokenType: String?
+    public var accessToken: String?
+    public var expiresIn: Int?
+    public var refreshToken: String?
+    public var tokenType: String?
 
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"

@@ -8,6 +8,6 @@
 
 // MARK: - Tracks
 public struct PlaylistTracks: Codable {
-    let href: String
-    let total: Int
+    public let href: String
+    public let total: Int
 }

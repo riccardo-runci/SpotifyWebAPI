@@ -8,6 +8,6 @@
 
 // MARK: - ExternalUrls
 public struct ExternalUrls: Codable {
-    let spotify: String
+    public let spotify: String
 }
 

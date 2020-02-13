@@ -8,7 +8,7 @@
 
 // MARK: - Seed
 public struct Seed: Codable {
-    let initialPoolSize, afterFilteringSize, afterRelinkingSize: Int
-    let id, type: String
-    let href: String?
+    public let initialPoolSize, afterFilteringSize, afterRelinkingSize: Int
+    public let id, type: String
+    public let href: String?
 }

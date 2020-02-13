@@ -13,23 +13,23 @@
 
 // MARK: - PlaylistsTracks
 public struct PlaylistsTracks: Codable {
-    let href: String
-    let items: [PlaylistsTracksItem]
-    let limit: Int
-    let next: String?
-    let offset: Int
-    let previous: String?
-    let total: Int
+    public let href: String
+    public let items: [PlaylistsTracksItem]
+    public let limit: Int
+    public let next: String?
+    public let offset: Int
+    public let previous: String?
+    public let total: Int
 }
 
 // MARK: - Item
 public struct PlaylistsTracksItem: Codable {
-    let addedAt: Date
-    let addedBy: AddedBy
-    let isLocal: Bool
-    let primaryColor: String?
-    let track: TracksItem
-    let videoThumbnail: VideoThumbnail?
+    public let addedAt: Date
+    public let addedBy: AddedBy
+    public let isLocal: Bool
+    public let primaryColor: String?
+    public let track: TracksItem
+    public let videoThumbnail: VideoThumbnail?
 
     enum CodingKeys: String, CodingKey {
         case addedAt = "added_at"
@@ -43,12 +43,12 @@ public struct PlaylistsTracksItem: Codable {
 
 // MARK: - AddedBy
 public struct AddedBy: Codable {
-    let externalUrls: ExternalUrls
-    let href: String
-    let id: String
-    let type: String
-    let uri: String
-    let name: String?
+    public let externalUrls: ExternalUrls
+    public let href: String
+    public let id: String
+    public let type: String
+    public let uri: String
+    public let name: String?
 
     enum CodingKeys: String, CodingKey {
         case externalUrls = "external_urls"
@@ -58,5 +58,5 @@ public struct AddedBy: Codable {
 
 // MARK: - VideoThumbnail
 public struct VideoThumbnail: Codable {
-    let url: String?
+    public let url: String?
 }

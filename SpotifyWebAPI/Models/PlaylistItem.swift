@@ -8,19 +8,19 @@
 
 // MARK: - Item
 public struct PlaylistItem: Codable {
-    let collaborative: Bool
-    let followers: Followers?
-    let itemDescription: String
-    let externalUrls: ExternalUrls
-    let href: String
-    let id: String
-    let images: [Image]
-    let name: String
-    let owner: PlaylistOwner
-    let primaryColor, itemPublic: String?
-    let snapshotID: String
-    let tracks: Tracks
-    let type, uri: String
+    public let collaborative: Bool
+    public let followers: Followers?
+    public let itemDescription: String
+    public let externalUrls: ExternalUrls
+    public let href: String
+    public let id: String
+    public let images: [Image]
+    public let name: String
+    public let owner: PlaylistOwner
+    public let primaryColor, itemPublic: String?
+    public let snapshotID: String
+    public let tracks: Tracks
+    public let type, uri: String
 
     enum CodingKeys: String, CodingKey {
         case followers = "followers"

@@ -8,5 +8,5 @@
 
 // MARK: - ExternalIDS
 public struct ExternalIDS: Codable {
-    let upc: String
+    public let upc: String?
 }

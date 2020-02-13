@@ -8,6 +8,6 @@
 
 // MARK: - Followers
 public struct Followers: Codable {
-    let href: String?
-    let total: Int
+    public let href: String?
+    public let total: Int
 }

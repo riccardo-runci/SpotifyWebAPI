@@ -7,17 +7,17 @@
 //
 // To parse the JSON, add this file to your project and do:
 //
-// let spotifyError = try? newJSONDecoder().decode(SpotifyError.self, from: jsonData)
+// public let spotifyError = try? newJSONDecoder().decode(SpotifyError.self, from: jsonData)
 
 import Foundation
 
 // MARK: - SpotifyError
 public struct SpotifyError: Codable {
-    let error: Error
+    public let error: Error
 }
 
 // MARK: - Error
 public struct Error: Codable {
-    let status: Int
-    let message: String
+    public let status: Int
+    public let message: String
 }

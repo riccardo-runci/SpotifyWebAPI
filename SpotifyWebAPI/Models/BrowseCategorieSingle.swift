@@ -8,11 +8,11 @@
 
 // To parse the JSON, add this file to your project and do:
 //
-//   let browseCategorieSingle = try? newJSONDecoder().decode(BrowseCategorieSingle.self, from: jsonData)
+//   public let browseCategorieSingle = try? newJSONDecoder().decode(BrowseCategorieSingle.self, from: jsonData)
 
 // MARK: - BrowseCategorieSingle
 public struct BrowseCategorieSingle: Codable {
-    let href: String
-    let icons: [Icon]
-    let id, name: String
+    public let href: String
+    public let icons: [Icon]
+    public let id, name: String
 }

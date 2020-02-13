@@ -7,11 +7,11 @@
 //
 // To parse the JSON, add this file to your project and do:
 //
-//   let raommendationsBasedOnSeeds = try? newJSONDecoder().decode(RaommendationsBasedOnSeeds.self, from: jsonData)
+//   public let raommendationsBasedOnSeeds = try? newJSONDecoder().decode(RaommendationsBasedOnSeeds.self, from: jsonData)
 
 
 // MARK: - RaommendationsBasedOnSeeds
 public struct RecommendationsBasedOnSeeds: Codable {
-    let tracks: [TracksItem]
-    let seeds: [Seed]
+    public let tracks: [TracksItem]
+    public let seeds: [Seed]
 }

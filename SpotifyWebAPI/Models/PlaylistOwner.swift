@@ -8,10 +8,10 @@
 
 // MARK: - Owner
 public struct PlaylistOwner: Codable {
-    let displayName: String
-    let externalUrls: ExternalUrls
-    let href: String
-    let id, type, uri: String
+    public let displayName: String
+    public let externalUrls: ExternalUrls
+    public let href: String
+    public let id, type, uri: String
 
     enum CodingKeys: String, CodingKey {
         case displayName = "display_name"

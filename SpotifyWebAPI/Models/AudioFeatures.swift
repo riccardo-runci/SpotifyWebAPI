@@ -12,15 +12,15 @@
 
 // MARK: - AudioFeatures
 public struct AudioFeatures: Codable {
-    let danceability, energy: Double
-    let key: Int
-    let loudness: Double
-    let mode: Int
-    let speechiness, acousticness, instrumentalness, liveness: Double
-    let valence, tempo: Double
-    let type, id, uri: String
-    let trackHref, analysisURL: String
-    let durationMS, timeSignature: Int
+    public let danceability, energy: Double
+    public let key: Int
+    public let loudness: Double
+    public let mode: Int
+    public let speechiness, acousticness, instrumentalness, liveness: Double
+    public let valence, tempo: Double
+    public let type, id, uri: String
+    public let trackHref, analysisURL: String
+    public let durationMS, timeSignature: Int
 
     enum CodingKeys: String, CodingKey {
         case danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, type, id, uri

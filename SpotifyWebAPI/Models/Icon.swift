@@ -8,7 +8,7 @@
 
 // MARK: - Icon
 public struct Icon: Codable {
-    let height: Int?
-    let url: String
-    let width: Int?
+    public let height: Int?
+    public let url: String
+    public let width: Int?
 }

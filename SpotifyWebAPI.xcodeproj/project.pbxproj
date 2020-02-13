@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD6F7ED223F58AE600370529 /* CurrentUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6F7ED123F58AE600370529 /* CurrentUserProfile.swift */; };
 		AD780FF323F1C73C0017831B /* Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD780FF223F1C73C0017831B /* Followers.swift */; };
 		AD9E346A23F2B08D006AC703 /* SeveralArtists.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E346923F2B08D006AC703 /* SeveralArtists.swift */; };
 		AD9E347023F2C4A0006AC703 /* ArtistsTopTracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E346F23F2C4A0006AC703 /* ArtistsTopTracks.swift */; };
@@ -77,6 +78,7 @@
 /* Begin PBXFileReference section */
 		2CDB5361A400D79DB61049B2 /* Pods_SpotifyWebAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotifyWebAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6427F67B5B6110A7CE24C684 /* Pods-SpotifyWebAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyWebAPI.debug.xcconfig"; path = "Target Support Files/Pods-SpotifyWebAPI/Pods-SpotifyWebAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		AD6F7ED123F58AE600370529 /* CurrentUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfile.swift; sourceTree = "<group>"; };
 		AD780FF223F1C73C0017831B /* Followers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Followers.swift; sourceTree = "<group>"; };
 		AD9E346923F2B08D006AC703 /* SeveralArtists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeveralArtists.swift; sourceTree = "<group>"; };
 		AD9E346F23F2C4A0006AC703 /* ArtistsTopTracks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsTopTracks.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				ADA1639423F461E1002C070F /* AudioAnalysis.swift */,
 				ADA1639623F46266002C070F /* UserProfile.swift */,
 				ADA163F623F4C51E002C070F /* AccessToken.swift */,
+				AD6F7ED123F58AE600370529 /* CurrentUserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				ADA163B423F48BAA002C070F /* TracksServices.swift in Sources */,
 				ADA163B623F48BB6002C070F /* UserProfileServices.swift in Sources */,
 				ADA1636323F43922002C070F /* PlaylistTracks.swift in Sources */,
+				AD6F7ED223F58AE600370529 /* CurrentUserProfile.swift in Sources */,
 				ADA163AE23F48A88002C070F /* PlayerServices.swift in Sources */,
 				ADA1636B23F43A1B002C070F /* Icon.swift in Sources */,
 				ADA1635923F4158C002C070F /* Albums.swift in Sources */,

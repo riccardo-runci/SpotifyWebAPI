@@ -8,13 +8,13 @@
 
 // To parse the JSON, add this file to your project and do:
 //
-//   let userTopArtists = try? newJSONDecoder().decode(UserTopArtists.self, from: jsonData)
+//   public let userTopArtists = try? newJSONDecoder().decode(UserTopArtists.self, from: jsonData)
 
 // MARK: - UserTopArtists
 public struct UserTopArtists: Codable {
-    let items: [Artist]
-    let total, limit, offset: Int
-    let previous: String?
-    let href: String
-    let next: String?
+    public let items: [Artist]
+    public let total, limit, offset: Int
+    public let previous: String?
+    public let href: String
+    public let next: String?
 }

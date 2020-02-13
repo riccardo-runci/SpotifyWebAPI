@@ -7,26 +7,26 @@
 //
 // To parse the JSON, add this file to your project and do:
 //
-//   let followedArtists = try? newJSONDecoder().decode(FollowedArtists.self, from: jsonData)
+//   public let followedArtists = try? newJSONDecoder().decode(FollowedArtists.self, from: jsonData)
 
 
 // MARK: - FollowedArtists
 public struct FollowedArtists: Codable {
-    let artists: Artists
+    public let artists: Artists
 }
 
 // MARK: - Artists
 public struct Artists: Codable {
-    let items: [Artist]
-    let next: String?
-    let total: Int
-    let cursors: Cursors?
-    let limit: Int
-    let href: String
+    public let items: [Artist]
+    public let next: String?
+    public let total: Int
+    public let cursors: Cursors?
+    public let limit: Int
+    public let href: String
 }
 
 // MARK: - Cursors
 public struct Cursors: Codable {
-    let after: String?
-    let before: String?
+    public let after: String?
+    public let before: String?
 }

@@ -13,13 +13,13 @@
 
 // MARK: - CurrentUserPlayingTrack
 public struct CurrentUserPlayingTrack: Codable {
-    let timestamp: Int
-    let context: Context
-    let progressMS: Int
-    let item: TracksItem
-    let currentlyPlayingType: String
-    let actions: Actions
-    let isPlaying: Bool
+    public let timestamp: Int
+    public let context: Context
+    public let progressMS: Int
+    public let item: TracksItem
+    public let currentlyPlayingType: String
+    public let actions: Actions
+    public let isPlaying: Bool
 
     enum CodingKeys: String, CodingKey {
         case timestamp, context

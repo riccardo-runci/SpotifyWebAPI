@@ -8,16 +8,16 @@
 
 // MARK: - Artist
 public struct Artist: Codable {
-    let externalUrls: ExternalUrls
-    let followers: Followers?
-    let images: [Image]?
-    let popularity: Int?
-    let genres: [String]
-    let href: String
-    let id: String
-    let name: String
-    let type: String
-    let uri: String
+    public let externalUrls: ExternalUrls
+    public let followers: Followers?
+    public let images: [Image]?
+    public let popularity: Int?
+    public let genres: [String]
+    public let href: String
+    public let id: String
+    public let name: String
+    public let type: String
+    public let uri: String
 
     enum CodingKeys: String, CodingKey {
         case externalUrls = "external_urls"

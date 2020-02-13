@@ -8,10 +8,10 @@
 
 // To parse the JSON, add this file to your project and do:
 //
-//   let availableGenreSeeds = try? newJSONDecoder().decode(AvailableGenreSeeds.self, from: jsonData)
+//   public let availableGenreSeeds = try? newJSONDecoder().decode(AvailableGenreSeeds.self, from: jsonData)
 
 // MARK: - AvailableGenreSeeds
 public struct AvailableGenreSeeds: Codable {
-    let genres: [String]
+    public let genres: [String]
 }
 

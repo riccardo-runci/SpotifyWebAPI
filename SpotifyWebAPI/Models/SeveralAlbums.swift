@@ -7,11 +7,11 @@
 //
 // To parse the JSON, add this file to your project and do:
 //
-//   let severalAlbums = try? newJSONDecoder().decode(SeveralAlbums.self, from: jsonData)
+//   public let severalAlbums = try? newJSONDecoder().decode(SeveralAlbums.self, from: jsonData)
 
 // MARK: - SeveralAlbums
 public struct SeveralAlbums: Codable {
-    let albums: [Album]
+    public let albums: [Album]
     
     enum CodingKeys: String, CodingKey {
         case albums = "albums"

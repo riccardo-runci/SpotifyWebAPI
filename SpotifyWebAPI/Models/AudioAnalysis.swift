@@ -13,24 +13,24 @@
 
 // MARK: - AudioAnalysis
 public struct AudioAnalysis: Codable {
-    let meta: Meta
-    let track: TrackAnalysis
-    let bars, beats, tatums: [Bar]
-    let sections: [[String: Double]]
-    let segments: [Segment]
+    public let meta: Meta
+    public let track: TrackAnalysis
+    public let bars, beats, tatums: [Bar]
+    public let sections: [[String: Double]]
+    public let segments: [Segment]
 }
 
 // MARK: - Bar
 public struct Bar: Codable {
-    let start, duration, confidence: Double
+    public let start, duration, confidence: Double
 }
 
 // MARK: - Meta
 public struct Meta: Codable {
-    let analyzerVersion, platform, detailedStatus: String
-    let statusCode, timestamp: Int
-    let analysisTime: Double
-    let inputProcess: String
+    public let analyzerVersion, platform, detailedStatus: String
+    public let statusCode, timestamp: Int
+    public let analysisTime: Double
+    public let inputProcess: String
 
     enum CodingKeys: String, CodingKey {
         case analyzerVersion = "analyzer_version"
@@ -45,10 +45,10 @@ public struct Meta: Codable {
 
 // MARK: - Segment
 public struct Segment: Codable {
-    let start, duration, confidence, loudnessStart: Double
-    let loudnessMaxTime, loudnessMax: Double
-    let pitches, timbre: [Double]
-    let loudnessEnd: Int?
+    public let start, duration, confidence, loudnessStart: Double
+    public let loudnessMaxTime, loudnessMax: Double
+    public let pitches, timbre: [Double]
+    public let loudnessEnd: Int?
 
     enum CodingKeys: String, CodingKey {
         case start, duration, confidence
@@ -62,26 +62,26 @@ public struct Segment: Codable {
 
 // MARK: - Track
 public struct TrackAnalysis: Codable {
-    let numSamples: Int
-    let duration: Double
-    let sampleMd5: String
-    let offsetSeconds, windowSeconds, analysisSampleRate, analysisChannels: Int
-    let endOfFadeIn, startOfFadeOut, loudness, tempo: Double
-    let tempoConfidence: Double
-    let timeSignature: Int
-    let timeSignatureConfidence: Double
-    let key: Int
-    let keyConfidence: Double
-    let mode: Int
-    let modeConfidence: Double
-    let codestring: String
-    let codeVersion: Double
-    let echoprintstring: String
-    let echoprintVersion: Double
-    let synchstring: String
-    let synchVersion: Int
-    let rhythmstring: String
-    let rhythmVersion: Int
+    public let numSamples: Int
+    public let duration: Double
+    public let sampleMd5: String
+    public let offsetSeconds, windowSeconds, analysisSampleRate, analysisChannels: Int
+    public let endOfFadeIn, startOfFadeOut, loudness, tempo: Double
+    public let tempoConfidence: Double
+    public let timeSignature: Int
+    public let timeSignatureConfidence: Double
+    public let key: Int
+    public let keyConfidence: Double
+    public let mode: Int
+    public let modeConfidence: Double
+    public let codestring: String
+    public let codeVersion: Double
+    public let echoprintstring: String
+    public let echoprintVersion: Double
+    public let synchstring: String
+    public let synchVersion: Int
+    public let rhythmstring: String
+    public let rhythmVersion: Int
 
     enum CodingKeys: String, CodingKey {
         case numSamples = "num_samples"

@@ -13,18 +13,18 @@
 
 // MARK: - UserRecentlyPlayed
 public struct UserRecentlyPlayed: Codable {
-    let items: [UserRecentlyPlayedItems]
-    let next: String
-    let cursors: Cursors
-    let limit: Int
-    let href: String
+    public let items: [UserRecentlyPlayedItems]
+    public let next: String
+    public let cursors: Cursors
+    public let limit: Int
+    public let href: String
 }
 
 // MARK: - Item
 public struct UserRecentlyPlayedItems: Codable {
-    let track: TracksItem
-    let playedAt: String
-    let context: Context?
+    public let track: TracksItem
+    public let playedAt: String
+    public let context: Context?
 
     enum CodingKeys: String, CodingKey {
         case track
@@ -35,10 +35,10 @@ public struct UserRecentlyPlayedItems: Codable {
 
 // MARK: - Context
 public struct Context: Codable {
-    let type: String
-    let externalUrls: ExternalUrls
-    let href: String
-    let uri: String
+    public let type: String
+    public let externalUrls: ExternalUrls
+    public let href: String
+    public let uri: String
 
     enum CodingKeys: String, CodingKey {
         case type

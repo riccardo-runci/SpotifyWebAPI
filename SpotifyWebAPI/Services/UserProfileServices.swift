@@ -44,7 +44,7 @@ public class UserProfileServices{
         }
     }
     
-    public func getCurrentUserProfile(onComplete : @escaping (_ response : UserProfile?, SpotifyError?) -> ()){
+    public func getCurrentUserProfile(onComplete : @escaping (_ response : CurrentUserProfile?, SpotifyError?) -> ()){
         let url = URL(string: baseUrl + "/me")!
         
         let headers : HTTPHeaders = [
@@ -53,7 +53,7 @@ public class UserProfileServices{
 
         print("REQUEST: \(#function)")
         
-        Alamofire.request(url, method: .get,  encoding: JSONEncoding.default, headers: headers).responseData { response in
+        Alamofire.request(url, method: .get,  encoding: JSONEncoding.default, headers: headers).responseJSON { response in
             print("RESPONSE: \(#function) - " + (response.response?.statusCode.description ?? ""))
             if let error = response.error {
                 print(error)
@@ -65,8 +65,16 @@ public class UserProfileServices{
             }
             let decoder: JSONDecoder = JSONDecoder.init()
             let spotifyError = try? decoder.decode(SpotifyError.self, from: data)
-            let result = try? decoder.decode(UserProfile.self, from: data)
-            onComplete(result, spotifyError)
+            do{
+                let result = try decoder.decode(CurrentUserProfile.self, from: data)
+                onComplete(result, spotifyError)
+            }
+            catch{
+                print(error.localizedDescription)
+                onComplete(nil, spotifyError)
+            }
+            
+            
         }
     }
 }

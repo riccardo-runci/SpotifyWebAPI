@@ -12,5 +12,5 @@
 
 // MARK: - SeveralTracks
 public struct SeveralTracks: Codable {
-    let tracks: [TracksItem]
+    public let tracks: [TracksItem]
 }

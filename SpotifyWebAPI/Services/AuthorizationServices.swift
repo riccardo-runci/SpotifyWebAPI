@@ -40,7 +40,14 @@ public class AuthorizationServices {
     
     private let tokenUrl = "https://accounts.spotify.com/api/token"
     private var authSession: SFAuthenticationSession?
-   // private var webAuthSession: ASWebAuthenticationSession?
+   
+    public func clearCookies(){
+        UserDefaults.standard.removeObject(forKey: AUTHORIZATION_CODE_KEY)
+        UserDefaults.standard.removeObject(forKey: ACCESS_TOKEN_KEY)
+        UserDefaults.standard.removeObject(forKey: EXPIRES_IN_KEY)
+        UserDefaults.standard.removeObject(forKey: REFRESH_TOKEN_KEY)
+        UserDefaults.standard.removeObject(forKey: TOKEN_TYPE_KEY)
+    }
     
     public func getAccessToken() -> AccessToken {
         return AccessToken(accessToken: ACCESS_TOKEN, expiresIn: Int(EXPIRES_IN ?? "0"), refreshToken: REFRESH_TOKEN, tokenType: TOKEN_TYPE)
@@ -78,7 +85,7 @@ public class AuthorizationServices {
             return
         }
 
-        let urlString = "https://accounts.spotify.com/authorize?client_id=\(config.clientId)&response_type=code&redirect_uri=\(config.redirectUri)&scope=\(config.encodedScopes)"
+        let urlString = "https://accounts.spotify.com/authorize?client_id=\(config.clientId)&response_type=code&show_dialog=true&redirect_uri=\(config.redirectUri)&scope=\(config.encodedScopes)"
 
         let authURL = URL(string: urlString)!
         let callbackUrlScheme = config.redirectUri

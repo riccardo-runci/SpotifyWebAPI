@@ -13,11 +13,11 @@
 
 // MARK: - UsersPlaylistsList
 public struct UsersPlaylistsList: Codable {
-    let href: String
-    let items: [PlaylistItem]
-    let limit: Int
-    let next: String?
-    let offset: Int
-    let previous: String?
-    let total: Int
+    public let href: String
+    public let items: [PlaylistItem]
+    public let limit: Int
+    public let next: String?
+    public let offset: Int
+    public let previous: String?
+    public let total: Int
 }

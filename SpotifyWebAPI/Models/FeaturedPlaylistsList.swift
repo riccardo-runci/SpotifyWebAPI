@@ -7,11 +7,11 @@
 //
 // To parse the JSON, add this file to your project and do:
 //
-//   let featuredPlaylistsList = try? newJSONDecoder().decode(FeaturedPlaylistsList.self, from: jsonData)
+//   public let featuredPlaylistsList = try? newJSONDecoder().decode(FeaturedPlaylistsList.self, from: jsonData)
 
 
 // MARK: - FeaturedPlaylistsList
 public struct FeaturedPlaylistsList: Codable {
-    let message: String
-    let playlists: Playlists
+    public let message: String
+    public let playlists: Playlists
 }

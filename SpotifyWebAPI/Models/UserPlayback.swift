@@ -13,16 +13,16 @@
 
 // MARK: - CurrentUserPlayback
 public struct CurrentUserPlayback: Codable {
-    let device: Device
-    let shuffleState: Bool
-    let repeatState: String
-    let timestamp: Int
-    let context: Context
-    let progressMS: Int
-    let item: TracksItem
-    let currentlyPlayingType: String
-    let actions: Actions
-    let isPlaying: Bool
+    public let device: Device
+    public let shuffleState: Bool
+    public let repeatState: String
+    public let timestamp: Int
+    public let context: Context
+    public let progressMS: Int
+    public let item: TracksItem
+    public let currentlyPlayingType: String
+    public let actions: Actions
+    public let isPlaying: Bool
 
     enum CodingKeys: String, CodingKey {
         case device
@@ -39,12 +39,12 @@ public struct CurrentUserPlayback: Codable {
 
 // MARK: - Actions
 public struct Actions: Codable {
-    let disallows: Disallows
+    public let disallows: Disallows
 }
 
 // MARK: - Disallows
 public struct Disallows: Codable {
-    let pausing, skippingPrev: Bool
+    public let pausing, skippingPrev: Bool
 
     enum CodingKeys: String, CodingKey {
         case pausing

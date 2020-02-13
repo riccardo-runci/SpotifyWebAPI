@@ -8,23 +8,23 @@
 
 // To parse the JSON, add this file to your project and do:
 //
-//   let userSavedAlbums = try? newJSONDecoder().decode(UserSavedAlbums.self, from: jsonData)
+//   public let userSavedAlbums = try? newJSONDecoder().decode(UserSavedAlbums.self, from: jsonData)
 
 // MARK: - UserSavedAlbums
 public struct UserSavedAlbums: Codable {
-    let href: String
-    let items: [UserSavedAlbumsItem]
-    let limit: Int
-    let next: String?
-    let offset: Int
-    let previous: String?
-    let total: Int
+    public let href: String
+    public let items: [UserSavedAlbumsItem]
+    public let limit: Int
+    public let next: String?
+    public let offset: Int
+    public let previous: String?
+    public let total: Int
 }
 
 // MARK: - UserSavedAlbumsItem
 public struct UserSavedAlbumsItem: Codable {
-    let addedAt: Date
-    let album: Album
+    public let addedAt: Date
+    public let album: Album
 
     enum CodingKeys: String, CodingKey {
         case addedAt = "added_at"

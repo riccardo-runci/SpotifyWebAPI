@@ -13,9 +13,9 @@
 
 // MARK: - UserTopTracks
 public struct UserTopTracks: Codable {
-    let items: [TracksItem]
-    let total, limit, offset: Int
-    let href: String
-    let previous: String?
-    let next: String?
+    public let items: [TracksItem]
+    public let total, limit, offset: Int
+    public let href: String
+    public let previous: String?
+    public let next: String?
 }

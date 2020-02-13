@@ -8,7 +8,7 @@
 
 // MARK: - Item
 public struct CategoriesItem: Codable {
-    let href: String
-    let icons: [Icon]
-    let id, name: String
+    public let href: String
+    public let icons: [Icon]
+    public let id, name: String
 }

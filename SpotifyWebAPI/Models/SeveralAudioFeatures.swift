@@ -12,7 +12,7 @@
 
 // MARK: - SeveralAudioFeatures
 public struct SeveralAudioFeatures: Codable {
-    let audioFeatures: [AudioFeatures]
+    public let audioFeatures: [AudioFeatures]
 
     enum CodingKeys: String, CodingKey {
         case audioFeatures = "audio_features"

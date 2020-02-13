@@ -8,6 +8,6 @@
 
 // MARK: - Copyright
 public struct Copyright: Codable {
-    let text, type: String
+    public let text, type: String
 }
 

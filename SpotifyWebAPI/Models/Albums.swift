@@ -8,11 +8,11 @@
 
 // MARK: - Albums
 public struct Albums: Codable {
-    let href: String
-    let items: [Album]
-    let limit: Int
-    let next: String
-    let offset: Int
-    let previous: String?
-    let total: Int
+    public let href: String
+    public let items: [Album]
+    public let limit: Int
+    public let next: String
+    public let offset: Int
+    public let previous: String?
+    public let total: Int
 }

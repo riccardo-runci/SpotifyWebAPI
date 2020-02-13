@@ -7,9 +7,9 @@
 //
 // To parse the JSON, add this file to your project and do:
 //
-//   let artistsRelatedArtists = try? newJSONDecoder().decode(ArtistsRelatedArtists.self, from: jsonData)
+//   public let artistsRelatedArtists = try? newJSONDecoder().decode(ArtistsRelatedArtists.self, from: jsonData)
 
 // MARK: - ArtistsRelatedArtists
 public struct ArtistsRelatedArtists: Codable {
-    let artists: [Artist]
+    public let artists: [Artist]
 }

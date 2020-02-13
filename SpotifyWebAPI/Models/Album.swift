@@ -7,27 +7,27 @@
 //
 // To parse the JSON, add this file to your project and do:
 //
-//   let album = try? newJSONDecoder().decode(Album.self, from: jsonData)
+//   public let album = try? newJSONDecoder().decode(Album.self, from: jsonData)
 
 // MARK: - Album
 public struct Album: Codable {
-    let albumType: String
-    let artists: [Artist]
-    let availableMarkets: [String]?
-    let copyrights: [Copyright]?
-    let externalIDS: ExternalIDS?
-    let externalUrls: ExternalUrls
-    let genres: [String]?
-    let href: String
-    let id: String
-    let images: [Image]
-    let label: String?
-    let name: String
-    let popularity: Int?
-    let releaseDate, releaseDatePrecision: String
-    let totalTracks: Int
-    let tracks: Tracks
-    let type, uri: String
+    public let albumType: String
+    public let artists: [Artist]
+    public let availableMarkets: [String]?
+    public let copyrights: [Copyright]?
+    public let externalIDS: ExternalIDS?
+    public let externalUrls: ExternalUrls
+    public let genres: [String]?
+    public let href: String
+    public let id: String
+    public let images: [Image]
+    public let label: String?
+    public let name: String
+    public let popularity: Int?
+    public let releaseDate, releaseDatePrecision: String
+    public let totalTracks: Int
+    public let tracks: Tracks
+    public let type, uri: String
 
     enum CodingKeys: String, CodingKey {
         case albumType = "album_type"

@@ -7,17 +7,17 @@
 //
 // To parse the JSON, add this file to your project and do:
 //
-//   let albumsTracks = try? newJSONDecoder().decode(AlbumsTracks.self, from: jsonData)
+//   public let albumsTracks = try? newJSONDecoder().decode(AlbumsTracks.self, from: jsonData)
 
 import Foundation
 
 // MARK: - AlbumsTracks
 public struct AlbumsTracks: Codable {
-    let href: String
-    let items: [TracksItem]
-    let limit: Int
-    let next: String?
-    let offset: Int?
-    let previous: String?
-    let total: Int
+    public let href: String
+    public let items: [TracksItem]
+    public let limit: Int
+    public let next: String?
+    public let offset: Int?
+    public let previous: String?
+    public let total: Int
 }

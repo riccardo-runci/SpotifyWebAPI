@@ -13,16 +13,16 @@
 
 // MARK: - UserProfile
 public struct UserProfile: Codable {
-    let displayName: String
-    let email, country: String?
-    let explicitContent: ExplicitContent?
-    let externalUrls: ExternalUrls
-    let followers: Followers?
-    let href: String
-    let id: String
-    let images: [Image]
-    let type, uri: String
-    let product: String?
+    public let displayName: String
+    public let email, country: String?
+    public let explicitContent: ExplicitContent?
+    public let externalUrls: ExternalUrls
+    public let followers: Followers?
+    public let href: String
+    public let id: String
+    public let images: [Image]
+    public let type, uri: String
+    public let product: String?
 
     enum CodingKeys: String, CodingKey {
         case displayName = "display_name"
@@ -36,8 +36,8 @@ public struct UserProfile: Codable {
 }
 
 // MARK: - ExplicitContent
-struct ExplicitContent: Codable {
-    let filterEnabled, filterLocked: Bool
+public struct ExplicitContent: Codable {
+    public let filterEnabled, filterLocked: Bool?
 
     enum CodingKeys: String, CodingKey {
         case filterEnabled = "filter_enabled"

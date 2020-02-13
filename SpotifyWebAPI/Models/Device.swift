@@ -8,10 +8,10 @@
 
 // MARK: - Device
 public struct Device: Codable {
-    let id: String
-    let isActive, isPrivateSession, isRestricted: Bool
-    let name, type: String
-    let volumePercent: Int
+    public let id: String
+    public let isActive, isPrivateSession, isRestricted: Bool
+    public let name, type: String
+    public let volumePercent: Int
 
     enum CodingKeys: String, CodingKey {
         case id

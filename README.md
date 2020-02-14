@@ -4,6 +4,12 @@ Spotify web Api for iOS, include authentication services and the WebServices ava
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development or testing purposes.
 
+- [Requirements](https://github.com/Rilissimo1/SpotifyWebAPI#requirements)
+- [Installing](https://github.com/Rilissimo1/SpotifyWebAPI#installing)
+- [Usage](https://github.com/Rilissimo1/SpotifyWebAPI#usage)
+- [Notes](https://github.com/Rilissimo1/SpotifyWebAPI#notes)
+
+
 ## Requirements
 
 - iOS 11.0+

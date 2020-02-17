@@ -158,6 +158,9 @@ you can clear the cookies with
 SpotifyAPI.v1.auth.clearCookies()
 ```
 
+##### Check out the sample app for full code flow
+[Spotify WebAPI Example](https://github.com/Rilissimo1/SpotifyWebAPIExample)
+
 #### Common API Calls
 
 After you have completed the authorization process you can now start to interact with the SpotifyAPI
@@ -179,7 +182,6 @@ SpotifyAPI.v1.userProfile.getCurrentUserProfile { (userProfile, error) in
 ```
 
 ### In the next releases
-- #### Sample app (:star: SOON :star:)
 - Search for Item API
 - Remove from Playlists API
 - Premium's account API
